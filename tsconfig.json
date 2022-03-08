@@ -13,11 +13,21 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "@src/*": ["src/*"],
-      "@modules/*": ["src/module/*"],
-      "@config/*": ["src/infrastructure/configs/*"],
-      "@exceptions": ["src/libs/exceptions"],
-      "@libs/*": ["src/libs/*"]
+      "@src/*": [
+        "src/*"
+      ],
+      "@modules/*": [
+        "src/module/*"
+      ],
+      "@config/*": [
+        "src/infrastructure/configs/*"
+      ],
+      "@exceptions": [
+        "src/libs/exceptions"
+      ],
+      "@libs/*": [
+        "src/libs/*"
+      ]
     }
   }
 }
