@@ -17,13 +17,13 @@
         "tsConfigPath": "apps/main/tsconfig.app.json"
       }
     },
-    "fs": {
+    "order": {
       "type": "application",
-      "root": "apps/fs",
+      "root": "apps/order",
       "entryFile": "main",
-      "sourceRoot": "apps/fs/src",
+      "sourceRoot": "apps/order/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/fs/tsconfig.app.json"
+        "tsConfigPath": "apps/order/tsconfig.app.json"
       }
     }
   }
