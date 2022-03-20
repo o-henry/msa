@@ -25,6 +25,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/order/tsconfig.app.json"
       }
+    },
+    "ddd": {
+      "type": "application",
+      "root": "apps/ddd",
+      "entryFile": "main",
+      "sourceRoot": "apps/ddd/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ddd/tsconfig.app.json"
+      }
     }
   }
 }
