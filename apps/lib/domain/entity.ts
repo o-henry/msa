@@ -1,4 +1,4 @@
-import { ID } from './id';
+import { v4 as uuidV4 } from 'uuid';
 
 /**
  * @desc entity
@@ -14,22 +14,20 @@ import { ID } from './id';
  */
 
 export abstract class Entity<T> {
-  protected readonly _id: ID;
-  protected props: T;
+  protected readonly props: T;
 
-  constructor(props: T, id?: ID) {
-    this._id = id ? id : new ID();
-    this.props = props;
+  constructor(protected readonly _id) {
+    this._id = uuidV4();
   }
 
   static isEntity(entity: unknown): entity is Entity<unknown> {
     return entity instanceof Entity;
   }
 
-  //   public equals(object?: Entity<T>): boolean {
-  //     if (object === null || object === undefined) return false;
-  //     if (this === object) return true;
-  //     if (!Entity.isEntity(object)) return false;
-  //     return this._id ? this._id.equals(object._id) : false;
-  //   }
+  public equals(object?: Entity<T>): boolean {
+    if (object === null || object === undefined) return false;
+    if (this === object) return true;
+    if (!Entity.isEntity(object)) return false;
+    return this._id.equals(object._id);
+  }
 }
