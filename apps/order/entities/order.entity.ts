@@ -6,11 +6,12 @@ import { order_state } from './order.type';
 
 interface OrderProps {
   item: Item;
-  userId: UserId;
+  // userId: UserId;
 }
 
 /**
- * Order aggregate를 정의한다.
+ * @desc: Order aggregate
+ * 비즈니스 로직을 정의한다.
  * user 가 주문을 하면 order 엔티티를 통해서 주문을 생성
  */
 
@@ -20,9 +21,9 @@ export class Order {
   }
 
   // TODO: FK
-  public get userId(): UserId {
-    return this.props.userId;
-  }
+  // public get userId(): UserId {
+  //   return this.props.userId;
+  // }
 
   protected readonly id;
   protected readonly props;
