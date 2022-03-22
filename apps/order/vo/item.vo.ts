@@ -22,7 +22,6 @@ export class Item implements ItemProps {
     if (props.quantity < 0) {
       return Result.err(new Error('quantity is out of range'));
     }
-
     return Result.ok(new Item(props));
   }
 }
