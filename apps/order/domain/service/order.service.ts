@@ -10,6 +10,7 @@ import { Order } from '../entities/order.entity';
 export class OrderService {
   constructor() {}
 
+  // TODO: create order domain event
   public create(): Order {
     const order = Order.create();
     return order;
