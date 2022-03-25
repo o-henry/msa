@@ -9,6 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "target": "es2019",
     "sourceMap": true,
+    "strict": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,

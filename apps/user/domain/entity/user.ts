@@ -1,22 +1,26 @@
-import { Result } from '@badrap/result';
 import { v4 as uuidV4 } from 'uuid';
+import { Result } from '@badrap/result';
 
 // TODO: add user props(value-object) interface
 
 // aggregate
 export class User {
-  private constructor(protected readonly _id, protected readonly props) {}
+  private constructor(
+    protected readonly _id: string,
+    protected readonly _props: unknown,
+  ) {}
 
   get id() {
     return this._id;
   }
 
-  public static create(create): Result<User> {
+  public static create(props: unknown): Result<User> {
     const id = uuidV4();
-    const props = { ...create };
     const user = new User(id, props);
 
-    // TODO: handle fail
+    if (!user) {
+      return Result.err(new Error('failed to create user'));
+    }
     return Result.ok(user);
   }
 }
