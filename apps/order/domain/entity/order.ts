@@ -3,10 +3,11 @@ import { v4 as uuidV4 } from 'uuid';
 
 import { Item } from '../../vo/item.vo';
 import { order_state } from './order.type';
+import { UserId } from 'apps/user/domain/entity/userId';
 
 interface OrderProps {
   item: Item;
-  // userId: UserId;
+  userId: UserId;
 }
 
 /**
@@ -18,23 +19,23 @@ interface OrderProps {
 
 // TODO: ADD VALIDATION
 export class Order {
-  public get item(): Item {
+  // 'constructor private' it forces you to use the 'create' Factory method.
+  private constructor(
+    protected readonly _id,
+    protected readonly props,
+    private state: order_state = order_state.APPROVAL_PENDING,
+  ) {}
+
+  get id() {
+    return this._id;
+  }
+
+  get item(): Item {
     return this.props.item;
   }
 
-  // TODO: FK
-  // public get userId(): UserId {
-  //   return this.props.userId;
-  // }
-
-  protected readonly id;
-  protected readonly props;
-  private state: order_state = order_state.APPROVAL_PENDING;
-
-  // 'constructor private' it forces you to use the 'create' Factory method.
-  private constructor(props, id) {
-    this.id = id;
-    this.props = props;
+  get userId(): UserId {
+    return this.props.userId;
   }
 
   public static create(create: OrderProps): Result<Order> {

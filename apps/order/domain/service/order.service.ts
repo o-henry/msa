@@ -4,7 +4,7 @@
  */
 
 import { Injectable } from '@nestjs/common';
-import { Order } from '../entity/order.entity';
+import { Order } from '../entity/order';
 
 @Injectable()
 export class OrderService {
