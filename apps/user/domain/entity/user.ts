@@ -10,6 +10,8 @@ export class User {
     protected readonly _props: unknown,
   ) {}
 
+  // TODO : implement FK
+
   get id() {
     return this._id;
   }
