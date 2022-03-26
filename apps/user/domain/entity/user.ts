@@ -11,16 +11,20 @@ interface Props {
 export class User {
   private constructor(
     protected readonly _id: string,
-    protected readonly _props: unknown,
+    protected readonly _props: Props,
   ) {}
 
-  // TODO : implement FK
+  // TODO : implement FK(Order)
 
   get id() {
     return this._id;
   }
 
-  public static create(props: unknown): Result<User> {
+  get name(): Name {
+    return this._props.name;
+  }
+
+  public static create(props: Props): Result<User> {
     const id = uuidV4();
     const user = new User(id, props);
 
