@@ -1,7 +1,11 @@
 import { v4 as uuidV4 } from 'uuid';
 import { Result } from '@badrap/result';
+import { Name } from '../vo/name.vo';
 
 // TODO: add user props(value-object) interface
+interface Props {
+  name: Name;
+}
 
 // aggregate
 export class User {
