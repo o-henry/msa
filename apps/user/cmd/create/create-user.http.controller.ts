@@ -9,7 +9,7 @@ export class CreateUserController {
     // description is dto
   })
   @Post()
-  async create_user() {
+  async createUser() {
     return;
   }
 }
