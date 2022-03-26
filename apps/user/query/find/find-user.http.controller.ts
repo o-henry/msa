@@ -4,10 +4,10 @@ import { UserResponse } from 'apps/user/dto/user.response.dto';
 
 @Controller({ path: 'users', version: '1' })
 export class FindUserController {
-  @Get()
   @ApiOperation({ summary: 'find users' })
   @ApiResponse({ status: HttpStatus.OK, type: UserResponse })
-  async find_users(): Promise<UserResponse[]> {
+  @Get()
+  async findUsers(): Promise<UserResponse[]> {
     return;
   }
 }
