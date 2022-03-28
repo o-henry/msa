@@ -12,7 +12,7 @@ export class Name {
   }
 
   protected validate(props: Props) {
-    if (props.name.length < 0) {
+    if (props.name.length < 5) {
       return Result.err(new Error('name has incorrect format'));
     }
   }

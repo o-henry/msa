@@ -3,7 +3,6 @@ import { v4 as uuidV4 } from 'uuid';
 
 import { Item } from '../../vo/item.vo';
 import { order_state } from './order.type';
-import { UserId } from 'apps/user/domain/entity/userId';
 
 interface OrderProps {
   item: Item;
@@ -34,7 +33,8 @@ export class Order {
     return this.props.item;
   }
 
-  get userId(): UserId {
+  // FK
+  get userId() {
     return this.props.userId;
   }
 
