@@ -4,7 +4,7 @@ import { v4 as uuidV4 } from 'uuid';
 import { Item } from '../../vo/item.vo';
 import { order_state } from './order.type';
 
-interface OrderProps {
+export interface OrderProps {
   item: Item;
   userId: UserId;
 }
@@ -20,7 +20,7 @@ interface OrderProps {
 export class Order {
   // 'constructor private' it forces you to use the 'create' Factory method.
   private constructor(
-    protected readonly _id,
+    protected readonly _id: string,
     protected readonly props,
     private state: order_state = order_state.APPROVAL_PENDING,
   ) {}
